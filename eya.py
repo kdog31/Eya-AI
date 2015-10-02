@@ -8,6 +8,7 @@ import os
 import datetime
 import vlc
 import pyttsx
+import json
 
 #defines
 s = os.system
@@ -38,9 +39,23 @@ angry_feelings = ['angry', 'enraged', 'pissed', 'pissed off',]
 loving_feelings = []
 
 #program start
+def database_load()
+	db = open("eyadb", "r")
+	data = json.loads(db.read())
+	b.close()
+	#print data
+	return data
+	
+def database_save()
+	b_file = open("eyadb", "w")
+	data = json.dumps(db, separators=(',', ':'))
+	db_file.write(data)
+	db_file.close()
+	
 
 
-def input_loop():
+
+def input_loop(db):
 	while True:
 		os.system('clear')
 		#print("::DEBUG:: " + user_text)
