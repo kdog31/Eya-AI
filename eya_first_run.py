@@ -9,14 +9,14 @@ import pyttsx
 import json
 
 #database stuff
-def database_load()
+def database_load():
 	db = open("eyadb", "r")
 	data = json.loads(db.read())
 	b.close()
 	#print data
 	return data
 	
-def database_save()
+def database_save():
 	bd_file = open("eyadb", "w")
 	data = json.dumps(db, separators=(',', ':'))
 	db_file.write(data)
@@ -25,7 +25,7 @@ def database_save()
 def say(saystr):
 	os.system("say " + str(saystr))
 
-def input(db)
+def input(db):
 	say("shat should i call you?")
 	name = raw_input("what should i cal you?")
 	print("ok so your name is " + name + ", nice to meet you")
@@ -40,3 +40,5 @@ def input(db)
 	say("ok thank you, i have everything i need")
 	DOB = DOB_DAY + "/" + DOB_MONTH + "/" + DOB_YEAR
 	db[user[name][DOB][Food]]
+	
+input()
