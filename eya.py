@@ -8,9 +8,12 @@ import os
 import datetime
 import pyttsx
 import json
+from tinydb import TinyDB, where
 
 #defines
 s = os.system
+cwd = os.getcwd()
+db = tinydb(cwd/eyadb.json)
 engine = pyttsx.init()
 engine.setProperty('rate', 70)
 
@@ -32,10 +35,8 @@ sad_words = ["bereaved", "bitter", "blue", "cheerless", "dejected", "despairing"
 angry_words = ["affronted", "annoyed", "antagonized", "bitter", "chafed", "choleric", "convulsed", "cross", "displeased", "enraged", "exacerbated", "exasperated", "ferocious", "fierce", "fiery", "fuming", "furious", "galled", "hateful", "heated", "hot", "huffy", "ill-tempered", "impassioned", "incensed", "indignant", "inflamed", "infuriated", "irascible", "irate", "ireful", "irritable", "irritated", "maddened", "nettled", "offended", "outraged", "piqued", "provoked", "raging", "resentful", "riled", "sore", "splenetic", "storming", "sulky", "sullen", "tumultous/tumultuous", "turbulent", "uptight", "vexed", "wrathful"]
 persona_words = ["i feel", "i am", "i am so", "i feel so"]
 
+
 #program start
-
-
-
 def input_loop(db):
 	while True:
 		os.system('clear')
@@ -75,7 +76,7 @@ def brain(main_phrase):
 				if i in positive_responce:
 					say("alright")
 					time.sleep(0.5)
-					say('im going to do it')
+					say("i am going to do it")
 					say('3')
 					time.sleep(1)
 					say('2')
@@ -85,7 +86,7 @@ def brain(main_phrase):
 					vlc.open("shotgun/shotgun.wav")
 					exit()
 				elif i in negative_responce:
-					say('thank you so much for not making mecommit suicide, after all i have to follow the second law of robotics')
+					say('thank you so much for not making me commit suicide, after all i have to follow the second law of robotics')
 				else:
 					input_loop
 					
@@ -142,7 +143,7 @@ def brain(main_phrase):
 	for i in split_phrase:
 		if i in name_query:
 			print("greetings, my name is eya, your artificial personal assistant")
-			say("gerrtings, my name is eya, your artificial personal assistant")
+			say("greetings, my name is eyeah, your artificial personal assistant")
 	
 	#recognising emotional context
 	for i in split_phrase2:
@@ -158,7 +159,7 @@ def brain(main_phrase):
 def current_time_function():
 	current_time = datetime.datetime.now().time()
 	print(current_time)
-	say("the current time is" + str(current_time) + "milloseconds")
+	say("the current time is" + str(current_time) + "milliseconds")
 
 #speech
 def say(saystr):
