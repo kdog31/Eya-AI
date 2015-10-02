@@ -17,7 +17,7 @@ def database_load()
 	return data
 	
 def database_save()
-	b_file = open("eyadb", "w")
+	bd_file = open("eyadb", "w")
 	data = json.dumps(db, separators=(',', ':'))
 	db_file.write(data)
 	db_file.close()
@@ -37,3 +37,6 @@ def input(db)
 	say("ok now i know how old you are")
 	say("what is your favorite food?")
 	Food = raw_input("favorite food: ")
+	say("ok thank you, i have everything i need")
+	DOB = DOB_DAY + "/" + DOB_MONTH + "/" + DOB_YEAR
+	db[user[name][DOB][Food]]
