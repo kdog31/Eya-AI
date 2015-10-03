@@ -29,11 +29,11 @@ reset = data['eya']['inputs']['reset']
 name_query = data['eya']['inputs']['name query']
 suicide_phrase = data['eya']['inputs']['suicide phrase']
 three_laws_phrase = data['eya']['inputs']['three laws phrase']
-persona_words = ['eya']['inputs']['persona words']
+persona_words = data['eya']['inputs']['persona words']
 emotions = data['eya']['inputs']['emotions']
-happy_words = ['eya']['inputs']['emotions']['happy emotions']
-sad_words = ['eya']['inputs']['emotions']['sad emotions']
-angry_words = ['eya']['inputs']['emotions']['angry emotions']
+happy_words = data['eya']['inputs']['emotions']['happy emotions']
+sad_words = data['eya']['inputs']['emotions']['sad emotions']
+angry_words = data['eya']['inputs']['emotions']['angry emotions']
 
 
 #emotions
@@ -50,7 +50,6 @@ def input_loop(db):
 		user_text = raw_input("what would you like me to do for you? ").lower()
 		main_phrase = user_text
 		brain(main_phrase)
-	end
 
 #brain
 def brain(main_phrase):
