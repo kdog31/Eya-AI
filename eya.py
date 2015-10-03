@@ -42,6 +42,10 @@ angry_words = data['eya']['inputs']['emotions']['angry emotions']
 
 #program start
 def input_loop(db):
+	"""
+
+	:rtype :
+	"""
 	while True:
 		os.system('clear')
 		#print("::DEBUG:: " + user_text)
@@ -82,7 +86,6 @@ def brain(main_phrase):
 					say("i am going to do it")
 					say('3')
 					time.sleep(1)
-					say('2')
 					time.sleep(1)
 					say('1')
 					say('bang')
@@ -149,13 +152,10 @@ def brain(main_phrase):
 			say("greetings, my name is eyeah, your artificial personal assistant")
 	
 	#recognising emotional context
-	for i in split_phrase2:
-		if i in emotions:
-			e = split_phrase2.remove(i)
-			for e in split_phrase:
-				if e in persona_words:
-					print("why are you telling me about your emotions?")
-					say("why are you tellimg me about your emotions")
+	for i in split_phrase:
+		if i in happy_words or sad_words or angry_words:
+			print("why are you telling me about your emotions?")
+			say("why are you telling me about your emotions")
 		
 
 #time
@@ -174,7 +174,7 @@ def internetresponce(split_phrase):
 		if i == "google":
 			say("what would you like me to google")
 			google = raw_input("what would you like me to google: ")
-			os.system("curl " + google)
+			os.system("curl " + " www.google.com/?q=" + google)
 			input_loop(1)
 		elif i == "yahoo":
 			say("what would you like me to yahoo")
@@ -187,7 +187,7 @@ def internetresponce(split_phrase):
 		elif i == "gmail":
 			say("opening gmail")
 			print("opening gmail")
-			os.system("curl mail.google.com")
+			os.system("mail.google.com")
 			input_loop(1)
 		elif i == "internet":
 			print("i can only open google, gmail, bing and yahoo.")
