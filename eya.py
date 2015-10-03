@@ -152,18 +152,18 @@ def brain(main_phrase):
 			say("greetings, my name is eyeah, your artificial personal assistant")
 	
 	#recognising emotional context
-	for i in split_phrase:
+	for i in split_phrase2:
 		#print(i in happy_words or sad_words or angry_words)
 		if i in happy_words:
 			print("its nice to see you hapy")
 			say("its nice to see you happy")
-	for i in split_phrase:
+	for i in split_phrase2:
 		if i in sad_words:
 			print("you seem sad, unfortunatley i can't do anything for you")
 			say("you seem sad, unfortunatly i can't to anything for you")
-	for i in split_phrase:
+	for i in split_phrase2:
 		if i in angry_words:
-			print("poy seem angry, unfortunatly i can't do anything for you")
+			print("yoy seem angry, unfortunatly i can't do anything for you")
 			say("you seem angry, unfortunatly i can't do anything for you")
 
 #time
