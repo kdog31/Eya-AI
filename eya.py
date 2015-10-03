@@ -21,7 +21,7 @@ engine.setProperty('rate', 70)
 #general knoledge
 negative_responce = data['eya']['inputs']['negative responce']
 positive_responce = data['eya']['inputs']['positive responce']
-greeting = data['eya']['inputs']['greetings']
+greetings = data['eya']['inputs']['greetings']
 exit = data['eya']['inputs']['exit']
 time_phrase = data['eya']['inputs']['time phrase']
 internet = data['eya']['inputs']['internet']
@@ -151,7 +151,7 @@ def brain(main_phrase):
 	
 	#recognising emotional context
 	for i in split_phrase2:
-		if i in happy_words or sad_words or angry_words:
+		if i in emotions:
 			e = split_phrase2.remove(i)
 			for e in split_phrase:
 				if e in persona_words:

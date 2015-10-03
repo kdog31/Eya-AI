@@ -4,4 +4,4 @@ import os
 cwd = os.getcwd()
 db = open(cwd+"/eyadb.json", "r")
 data = json.loads(db.read())
-print data['eya']['inputs']['emotions']['happy emotions']
+print data['eya']['inputs']['emotions']
