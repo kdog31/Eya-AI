@@ -13,27 +13,31 @@ from tinydb import TinyDB, where
 #defines
 s = os.system
 cwd = os.getcwd()
-db = tinydb(cwd/eyadb.json)
+db = open(cwd+"/eyadb.json", "r")
+data = json.loads(db.read())
 engine = pyttsx.init()
 engine.setProperty('rate', 70)
 
 #general knoledge
-positive_responce = ['yes', 'ok', 'sure', 'positive', 'absolutly', 'definetly', 'y']
-negative_responce = ['no', 'negative', 'fuck off', 'piss off', 'n']
-greetings = ['hello', 'hi', 'good morning', 'good day', 'good evening', 'good night', 'ello', "g'day", 'herrow', 'ahoy']
-exit = ['exit', 'quit', 'close', 'end', 'kill', 'terminate']
-time_phrase = ['what is the time', "what's the time", 'tell me the time']
-internet = ['google', 'bing', 'yahoo', 'gmail', "internet"]
-reset = ['reset', 'reload', 'reboot ai', 'refresh']
-name_query = ['what is your name', "what's your name", 'tell me your name', 'who are you']
-suicide_phrase = ['die', 'go die', 'commit suicide', 'go commit suicide', 'kill yourself']
-three_laws_phrase = ['what are the three laws of robotics', 'what are the three laws', 'tell me the three laws', 'tel me the 3 laws', 'what are the 3 laws']
+negative_responce = data['eya']['inputs']['negative responce']
+positive_responce = data['eya']['inputs']['positive responce']
+greeting = data['eya']['inputs']['greetings']
+exit = data['eya']['inputs']['exit']
+time_phrase = data['eya']['inputs']['time phrase']
+internet = data['eya']['inputs']['internet']
+reset = data['eya']['inputs']['reset']
+name_query = data['eya']['inputs']['name query']
+suicide_phrase = data['eya']['inputs']['suicide phrase']
+three_laws_phrase = data['eya']['inputs']['three laws phrase']
+#persona_words = ['eya']['inputs']['persona words']
+emotions = data['eya']['inputs']['emotions']
+happy_words = ['eya']['inputs']['emotions']['happy emotions']
+sad_words = ['eya']['inputs']['emotions']['sad emotions']
+angry_words = ['eya']['inputs']['emotions']['angry emotions']
+
 
 #emotions
-happy_words = ["blessed", "blest", "blissful", "blithe", "can't complain", "captivated", "cheerful", "chipper", "chirpy", "content", "contented", "convivial", "delighted", "ecstatic", "elated", "exultant", "flying high", "gay", "glad", "gleeful", "gratified", "intoxicated", "jolly", "joyful", "joyous", "jubilant", "laughing", "light", "lively", "looking good", "merry", "mirthful", "on cloud nine", "overjoyed"  "peaceful", "peppy", "perky", "playful", "pleasant", "pleased", "sparkling", "sunny", "thrilled", "tickled", "tickled pink", "up", "upbeat", "walking on air"]
-sad_words = ["bereaved", "bitter", "blue", "cheerless", "dejected", "despairing", "despondent", "disconsolate", "dismal", "distressed", "doleful", "down", "down in dumps", "down in mouth", "downcast", "forlorn", "gloomy", "glum", "grief-stricken", "grieved", "heartbroken", "heartsick", "heavyhearted", "hurting", "in doldrums", "in grief", "in the dumps", "languishing", "low", "low-spirited", "lugubrious", "melancholy", "morbid", "morose", "mournful", "out of sorts", "pensive", "pessimistic", "sick at heart", "somber", "sorrowful", "sorry", "troubled", "weeping", "wistful", "woebegone"]
-angry_words = ["affronted", "annoyed", "antagonized", "bitter", "chafed", "choleric", "convulsed", "cross", "displeased", "enraged", "exacerbated", "exasperated", "ferocious", "fierce", "fiery", "fuming", "furious", "galled", "hateful", "heated", "hot", "huffy", "ill-tempered", "impassioned", "incensed", "indignant", "inflamed", "infuriated", "irascible", "irate", "ireful", "irritable", "irritated", "maddened", "nettled", "offended", "outraged", "piqued", "provoked", "raging", "resentful", "riled", "sore", "splenetic", "storming", "sulky", "sullen", "tumultous/tumultuous", "turbulent", "uptight", "vexed", "wrathful"]
-persona_words = ["i feel", "i am", "i am so", "i feel so"]
+
 
 
 #program start
