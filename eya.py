@@ -168,7 +168,7 @@ def brain(main_phrase):
 def current_time_function():
 	current_time = datetime.datetime.now().strftime('%I %M %p')
 	print(current_time)
-	say("the current time is" + str(current_time) + "milliseconds")
+	say("the current time is " + str(current_time))
 
 #speech
 def say(saystr):
