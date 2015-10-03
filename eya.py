@@ -157,10 +157,10 @@ def brain(main_phrase):
 		if i in happy_words:
 			print("its nice to see you hapy")
 			say("its nice to see you happy")
-		elif i in sad_words:
+		if i in sad_words:
 			print("you seem sad, unfortunatley i can't do anything for you")
 			say("you seem sad, unfortunatly i can't to anything for you")
-		elif i in angry_words:
+		if i in angry_words:
 			print("poy seem angry, unfortunatly i can't do anything for you")
 			say("you seem angry, unfortunatly i can't do anything for you")
 
