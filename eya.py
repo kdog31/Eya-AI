@@ -154,7 +154,7 @@ def brain(main_phrase):
 	#recognising emotional context
 	for i in split_phrase:
 		#print(i in happy_words or sad_words or angry_words)
-		if i in happy_word:
+		if i in happy_words:
 			print("its nice to see you hapy")
 			say("its nice to see you happy")
 		elif i in sad_words:
